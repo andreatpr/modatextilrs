@@ -1,0 +1,230 @@
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    
+}
+.main{
+    display: flex;
+    height: 100vh;
+    padding: 1.25rem;
+}
+
+.main_content{
+    box-sizing: border-box;
+    flex: 1;
+    padding: 0 15rem 25rem;
+    overflow-y: scroll; /* Permite el desplazamiento vertical */
+    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+    height: 100vh; 
+    width: 100%;
+    margin-left: 150px;
+}
+.main_content .header{
+    padding: 0 6rem 0;
+}
+.insta{
+    font-family: 'Cookie';
+    width: 93px;
+    height: 40px;
+    font-size: 30px;
+    margin: 1rem;
+    padding: 0.5rem;
+    padding-top: 20px;
+    margin-bottom: 18px;
+}
+.nav a:link,
+.nav a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+.nav{
+    line-height: 3.5rem;
+    font-size: medium;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+i{
+    padding-left: 1.5rem;
+}
+.nav div i{
+    font-size: 22px;
+}
+.nav  i{
+    padding-right:1rem ;
+    width: 1.5rem;
+}
+.menu {
+    position: fixed;
+    bottom: 0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header{
+    display: flex;
+    margin-left: 5px;
+    margin-right: 24px;
+    padding: 30px 20px 0 20px;
+}
+.dp{
+    margin-right: 20px;
+}
+.dp img{
+    margin-top: 30px;
+   height: 140px;
+   width: 150px;
+   border-radius: 50%;
+}
+.info{
+    margin-top: 20px;
+    height:152px;
+    width: 152px;
+}
+.info .id{
+    margin-left: 5rem;
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 17px;
+    display: flex;
+}
+.botones-per{
+    display: flex;
+    margin-top: -6px;
+}
+#p-bad{
+    margin: 0 1rem;
+}
+#fa-soli-fa-gear {
+    margin-left: -10px; /* Ajusta el valor de margen según tu preferencia */
+}
+.badges {
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(48, 47, 47);
+    color: white;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    margin-left: -10px;
+}
+.id i{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    margin-left: 3rem;
+}
+.badges:hover{
+    background-color: rgb(40, 38, 38);
+}
+.follow{
+    margin-left: 80px;
+    display: flex;
+    margin-top:2rem;
+    font-size: 15px;
+    white-space: nowrap;
+}
+.follow div{
+    margin-right: 40px;
+}
+.post{
+    margin-right: 4rem;
+}
+.followers{
+    margin-right: 4rem; 
+}
+.name{
+    margin-left: 5rem;
+    margin-top:20px;
+    white-space: nowrap;
+}
+.rohan{
+    font-size: 12px;
+    font-weight: bold;
+}
+.writer{
+    opacity: 0.7;
+    margin-top: 0.4rem;
+    font-size: 14px;
+}
+.caption{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 0.4rem;
+}
+.highlights{
+    display: flex;
+    height: 50px;
+    width: 50px;
+    margin-top: 5rem;
+    margin-left: 55px;
+    margin-right: 24px;
+    padding: 30px 20px 0 20px;
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 42px;
+}
+
+
+.containerss {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.card-c {
+    border-radius: 2px;
+    margin: 0;
+}
+
+.containerss{
+    width: 100%;
+}
+.containerss div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.card-c {
+    border-radius: 2px;
+    margin: 0;
+}
+
+.card-img-top {
+    height: 260px;
+    width: 280px;
+}
+
+.container1{
+    display: flex;
+    margin-top: 0.5rem;
+}
+.container2{
+    display: flex;
+    margin-top: 0.4rem;
+    
+}
+.barra-containers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+.linea-horizontal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white; 
+}

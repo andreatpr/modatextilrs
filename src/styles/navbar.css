@@ -1,0 +1,170 @@
+.notification-sidebar {
+    z-index: 9999;
+    display: none;
+    width: 350px;
+    background-color: black;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 250px;
+    bottom: 0;
+    right: -200px; /* Inicialmente oculta fuera de la pantalla */
+    height: 100%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .nueva-noti {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .nueva-noti img{
+    width: 20px;
+    height: 20px;
+  }
+  .p-nueva {
+    display: flex;
+    align-items: center;
+  }
+  
+  .p-nueva img {
+    margin-right: 10px; 
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .search-container {
+    display: none;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 300px;
+    bottom: 0;
+    background-color: black;
+    padding: 15px;
+    width: 300px;
+  }
+  .search-container input{
+    background-color: rgba(65, 64, 64, 0.624);
+    margin-left: -50px;
+    width: 100%;
+    border: 2px solid #000; /* Ajusta el ancho y color del borde según tus necesidades */
+    border-radius: 5px; /* Ajusta el valor para redondear las esquinas según tus necesidades */
+    box-sizing: border-box; 
+    padding: 10px;
+  }
+  .search-container h2{
+    margin-left: -50px;
+  }
+  .search-container input::placeholder{
+    font-size: 15px;
+    font-weight: 280;
+  }
+  .sidebar{
+    background-color:black;
+    width: 244px;
+    box-shadow: 0.5px 0.1px 1px rgb(80, 79, 79);
+    position: fixed;
+    height: 100vh; 
+    left: 0;
+    top: 0;
+  }
+  .nav a:link,
+  .nav a:visited {
+      text-decoration: none;
+      color: inherit;
+  }
+  .nav{
+      line-height: 3.5rem;
+      font-size: medium;
+      font-weight: 500;
+      font-family: 'Roboto', sans-serif;
+  }
+  i{
+      padding-left: 1.5rem;
+  }
+  .nav div i{
+      font-size: 22px;
+  }
+  .nav  i{
+      padding-right:1rem ;
+      width: 1.5rem;
+  }
+  .home:hover, .search:hover, .explore:hover, .reels:hover,
+  .messages:hover, .notification:hover, .create:hover,
+  .profile:hover, .menu:hover{
+      border-radius: 10px;
+      background-color: rgb(20, 19, 19);
+  }
+  .alfaaz img, .meeh img, .reels img,
+   .college img, .love img, .yaar img, .mine img {
+      height: 80px;
+      width: 80px;
+      margin-right: 2rem;
+      border-radius: 50%;
+  }
+  .insta{
+    font-family: 'Cookie';
+    width: 93px;
+    height: 40px;
+    font-size: 30px;
+    margin: 1rem;
+    padding: 0.5rem;
+    padding-top: 20px;
+    margin-bottom: 18px;
+  }
+  #image_description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  #image_description .img_p {
+    margin-right: 40px; /* Ajusta el valor según tus necesidades */
+  }
+  .cart {
+    margin-top: 20px;
+  }
+  
+  .img-id {
+    width: 50px; 
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .img-id img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  .post_published {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+  }
+  
+  .post_published img {
+    margin-top: 80px;
+  }
+  
+  .img_p img{
+    margin-top: 40px;
+    height: 250px;
+    width: 250px;
+  }

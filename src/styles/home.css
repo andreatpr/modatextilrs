@@ -1,0 +1,487 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*MAIN PAGE */
+.container{ 
+  display: inline-block; 
+  cursor: pointer; 
+} 
+  
+.searchbar input { 
+  background-color: #3f3f3f; 
+  padding: 5px; 
+  text-indent: 21px; 
+  outline: none; 
+  border: 1px solid #3f3f3f;
+  border-radius: 2px; 
+  color: white
+} 
+  
+.searchbar input::placeholder { 
+  font-weight: lighter; 
+  color: rgb(172, 172, 172); 
+} 
+  
+main { 
+  width: 100%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+} 
+  
+main .container { 
+  margin-left: 300px;
+  position: relative; 
+  width: 70%; 
+  display: flex; 
+  align-items: flex-start; 
+  justify-content: space-between; 
+} 
+  
+.col-9 { 
+  width: 50%; 
+  margin-top: 30px; 
+} 
+  
+.statuses { 
+  margin-bottom: 30px; 
+  width: 100%; 
+  background-color: black; 
+  display: flex; 
+  align-items: center; 
+  justify-content: start; 
+  padding: 20px 0; 
+  border-radius: 2px; 
+  overflow: auto; 
+} 
+  
+.statuses .status { 
+  display: inline-block; 
+  border-radius: 50%; 
+  overflow: auto; 
+  width: 50px; 
+  height: 50px; 
+  min-width: 50px; 
+  min-height: 50px; 
+  background: linear-gradient(to right, orange, red,purple); 
+  padding: 2px 6px 6px 2px; 
+  margin-left: 15px; 
+  cursor: pointer; 
+} 
+  
+.statuses .status .image { 
+  position: relative; 
+  width: 100%; 
+  height: 100%; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  cursor: pointer; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border: 2px solid black; 
+} 
+  
+.statuses .status img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+} 
+  
+  .col-9 .card { 
+  margin-bottom: 20px; 
+  position: relative; 
+  width: 100%; 
+  /* min-height: 400px; */
+  display: inline-block; 
+  border: 1px solid rgba(7, 7, 7, 0.24); 
+  } 
+  
+  .col-9 .card .top { 
+  padding: 10px 20px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  } 
+  
+  .col-9 .card .bottom { 
+  padding: 10px 20px; 
+  } 
+  
+  .col-9 .card .top .userDetails { 
+  width: 100%; 
+  display: flex; 
+  align-items: center; 
+  } 
+  
+  .profilepic { 
+  display: inline-block; 
+  cursor: pointer; 
+  } 
+  
+  .profilepic .profile_img { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  width: 35px; 
+  height: 33px; 
+  background: linear-gradient(to right, red, orange); 
+  padding: 3px 2px 3px 2px; 
+  margin-right: 8px; 
+  cursor: pointer; 
+  } 
+  
+  .profilepic .profile_img .image { 
+  position: relative; 
+  width: 100%; 
+  height: 100%; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  cursor: pointer; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border: 2px solid black; 
+  } 
+  
+  .profilepic .profile_img img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  } 
+  
+  .cover { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  } 
+  
+  .col-9 .card .top .userDetails h3 { 
+  /* width: 100%; */
+  font-size: 16px; 
+  color: white; 
+  font-weight: 500; 
+  line-height: 1em; 
+  } 
+  
+  .col-9 .card .top .userDetails h3 span { 
+  font-size: 0.75em; 
+  } 
+  
+  .col-9 .card .top .userDetails h3 span { 
+  font-size: 0.75em; 
+  } 
+  
+  .dot { 
+  transform: scale(0.6); 
+  cursor: pointer; 
+  } 
+  
+  .imgBx { 
+  position: relative; 
+  width: 100%; 
+  min-height: 600px; 
+  margin: 10px 0 15px; 
+  } 
+  
+  .actionBtns { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  } 
+  
+  .actionBtns svg { 
+  cursor: pointer; 
+  } 
+  
+  .actionBtns .left svg { 
+  margin-right: 8px; 
+  } 
+  
+  .likes { 
+  font-weight: 500; 
+  margin-top: 5px; 
+  font-size: 14px; 
+  color: white; 
+  } 
+  
+  .message { 
+  font-weight: 400; 
+  margin-top: 5px; 
+  font-size: 14px; 
+  color: #ddd; 
+  line-height: 1.5em; 
+  } 
+  
+  .message b { 
+  color: #ddd; 
+  } 
+  
+  .message span { 
+  cursor: pointer; 
+  color: #1d92ff; 
+  } 
+  
+  .comments { 
+  margin-top: 10px; 
+  font-weight: 400; 
+  color: #767272; 
+  } 
+  
+  .addComments { 
+  display: flex; 
+  align-items: center; 
+  border-bottom: 1px solid #2d2c2c; 
+  } 
+  
+  .addComments a { 
+  color: #1d92ffcb; 
+  font-weight: 500; 
+  } 
+  
+  .addComments .reaction { 
+  position: relative; 
+  font-size: 1.3rem; 
+  margin-right: 10px; 
+  color: rgb(88, 88, 88); 
+  } 
+  
+  input.text { 
+  width: 100%; 
+  border: none; 
+  outline: none; 
+  font-weight: 400; 
+  font-size: 14px; 
+  color: white;
+  background: none; 
+  } 
+  
+  input.text::placeholder { 
+  color: #777; 
+  } 
+  
+  .postTime { 
+  margin-top: 8px; 
+  font-weight: lighter; 
+  color: rgb(163, 163, 163); 
+  font-size: 12px; 
+  text-transform: uppercase; 
+  } 
+  
+  a { 
+  text-decoration: none; 
+  } 
+  
+  .hidden { 
+  display: none; 
+  } 
+
+/*derecha bar*/
+ 
+.col-3 { 
+  width: 33%; 
+  position: -webkit-sticky; 
+  position: sticky; 
+  top: 90px; 
+} 
+  
+.col-3 h4 { 
+  color: rgb(100, 100, 100); 
+} 
+  
+.col-3 .card { 
+  margin-bottom: 20px; 
+  position: relative; 
+  width: 100%; 
+  /* min-height: 400px; */
+  display: inline-block; 
+} 
+  
+.col-3 .card .top { 
+  padding: 10px 0px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+} 
+  
+.col-3 .card .top a { 
+  color: #1d92ff; 
+} 
+  
+.col-3 .card .bottom { 
+  padding: 10px 20px; 
+} 
+  
+.col-3 .card .top .userDetails { 
+  width: 100%; 
+  display: flex; 
+  align-items: center; 
+} 
+  
+.col-3 .card .top .userDetails h3 { 
+  font-size: 16px; 
+  color: #4d4d4f; 
+  font-weight: 500; 
+  line-height: 1em; 
+} 
+  
+.col-3 .card .top .userDetails h3 span { 
+  font-size: 0.75em; 
+} 
+  
+.col-3 .card .top .userDetails h3 span { 
+  font-size: 0.75em; 
+} 
+
+.col-3 .card .top a:hover{
+color: white;
+}
+.sug-ver{
+  display: flex;
+  justify-content:space-between;
+}
+
+/*POST CSS*/
+.m-d-h{
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content:space-between;
+}
+.m-d-h h2{
+  margin-left: 40px;
+  margin-right: 30px;
+}
+.nextButton{
+  background-color: transparent;
+  border: none;
+  color: #0095f6;
+  cursor: pointer;
+  font-size: 14px;
+}
+body.modal-open {
+  background-color: #000000; /* Ajusta el color y la opacidad según tus necesidades */
+  overflow: hidden; /* Evita que el contenido de fondo sea desplazable mientras el modal está abierto */
+}
+.modal-container {
+  display: none;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  top: 20%;
+  left: 25%;
+  width: 50%; /* Cambia el color de fondo según sea necesario */
+  z-index: 1000; /* Ajusta el índice z según sea necesario para que esté por encima de otros elementos */
+  padding: 10px; /* Añade una sombra si lo deseas */
+}
+/* Estilos para el cuerpo del modal */
+.modal-body {
+  background-color: #262626;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  height: 400px;
+}
+
+.create-post-u {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn_upload {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #0095f6;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn_upload:hover {
+  background-color: #0080e4;
+}
+
+.input_select {
+  display: none;
+}
+
+.post-but{
+  background-color: #0080e4;
+  color: white;
+  border-radius: 30px;
+  border: 2px solid #0080e4;
+  cursor: pointer; 
+}
+  @media screen and (max-width: 1000px) { 
+  .col-9 { 
+    width: 100%; 
+  } 
+  
+  .col-3 { 
+    display: none; 
+  } 
+  } 
+  
+  @media screen and (max-width: 600px) { 
+  .container { 
+    width: 100% !important; 
+  } 
+  
+  .navbar .container { 
+    padding: 15px 10px !important; 
+  } 
+  
+  .col-9 { 
+    margin-top: 4px; 
+    min-width: 100%; 
+  } 
+  
+  .statuses { 
+    margin-bottom: 0px; 
+  } 
+  
+  .col-9 .card { 
+    margin-bottom: 0px; 
+    width: 100%; 
+    border: none; 
+  } 
+  
+  .imgBx { 
+    position: relative; 
+    width: 100%; 
+    min-height: 400px; 
+    margin: 10px 0 15px; 
+  } 
+  
+  .searchbar { 
+    display: none; 
+  } 
+  } 
+  
+  .footer .footer-section { 
+  margin-left: 0.5rem; 
+  color: #999999; 
+  font-size: 14px; 
+  font-family: sans-serif; 
+  } 
+  
+  .footer a:hover { 
+    text-decoration: underline;
+  }
+  

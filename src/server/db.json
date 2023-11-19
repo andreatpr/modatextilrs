@@ -1,0 +1,135 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "modatextil",
+        "fullName": "Moda Textil",
+        "category": "store",
+        "profilePicture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYpBg7nTYI3uHho_D_K2d-Z5NkC_2PMBbZ1Q&usqp=CAU",
+        "bio": "Hello! This is a Moda Textil World.",
+        "postsQuantity": 2,
+        "followers": 500,
+        "following": 0
+      },
+      {
+        "id": 2,
+        "username": "andrea",
+        "fullName": "Andrea Johnson",
+        "category": "user",
+        "profilePicture": "https://randomuser.me/api/portraits/women/1.jpg",
+        "bio": "Fashion enthusiast and blogger.",
+        "postsQuantity": 5,
+        "followers": 200,
+        "following": 1
+      },
+      {
+        "id": 3,
+        "username": "abigail",
+        "fullName": "Abigail Smith",
+        "category": "user",
+        "profilePicture": "https://randomuser.me/api/portraits/women/2.jpg",
+        "bio": "Aspiring fashion designer. ❤️✂️",
+        "postsQuantity": 3,
+        "followers": 150,
+        "following": 2
+      }
+    ],
+    "posts": [
+      {
+        "id": 1,
+        "userId": 1,
+        "image": "https://cafe24img.poxo.com/nandaglobal/web/product/small/201808/6ead197b62329da2763203fe733b6874.gif",
+        "caption": "A new Dress Collection!",
+        "likes": 120,
+        "comments": [
+          {"id": 1, "userId": 2, "content": "Incredible!"},
+          {"id": 2, "userId": 3, "content": "I want it!"}
+        ]
+      },
+      {
+        "id": 2,
+        "userId": 1,
+        "image": "https://cafe24img.poxo.com/nandaglobal/web/product/big/202309/8a35c0212f99c5ca3a3ea13cb75a9816.png",
+        "caption": "An amazing view from the clothe.",
+        "likes": 80,
+        "comments": [
+          {"id": 3, "userId": 2, "content": "What an awesome top!"},
+          {"id": 4, "userId": 3, "content": "I want to buy this!"}
+        ]
+      },
+      {
+        "id": 3,
+        "userId": 2,
+        "image": "https://randomuser.me/api/portraits/women/3.jpg",
+        "caption": "Exploring the latest fashion trends. 👗",
+        "likes": 45,
+        "comments": [
+          {"id": 5, "userId": 1, "content": "Love your style!"},
+          {"id": 6, "userId": 3, "content": "Where did you get that dress?"}
+        ]
+      },
+      {
+        "id": 4,
+        "userId": 1,
+        "image": "https://cafe24img.poxo.com/nandaglobal/web/product/big/202309/8a35c0212f99c5ca3a3ea13cb75a9816.png",
+        "caption": "An amazing view from the clothe.",
+        "likes": 80,
+        "comments": [
+          {"id": 3, "userId": 2, "content": "What an awesome top!"},
+          {"id": 4, "userId": 3, "content": "I want to buy this!"}
+        ]
+      },
+      {
+        "id": 5,
+        "userId": 1,
+        "image": "https://cafe24img.poxo.com/nandaglobal/web/product/big/202309/8a35c0212f99c5ca3a3ea13cb75a9816.png",
+        "caption": "An amazing view from the clothe.",
+        "likes": 80,
+        "comments": [
+          {"id": 3, "userId": 2, "content": "What an awesome top!"},
+          {"id": 4, "userId": 3, "content": "I want to buy this!"}
+        ]
+      }
+    ],
+    "messages": [
+      {
+        "id": 1,
+        "sender_id": 1,
+        "recipient_id": 2,
+        "content": "Hello! How are you?",
+        "date": "2023-04-01T08:30:00"
+      },
+      {
+        "id": 2,
+        "sender_id": 1,
+        "recipient_id": 3,
+        "content": "Do you want to hang out this weekend?",
+        "date": "2023-04-02T12:45:00"
+      },
+      {
+        "id": 3,
+        "sender_id": 2,
+        "recipient_id": 1,
+        "content": "Hello! Would you like to grab a coffee?",
+        "date": "2023-04-03T10:15:00"
+      },
+      {
+        "id": 4,
+        "sender_id": 3,
+        "recipient_id": 1,
+        "content": "Do you want to join our activity this Saturday?",
+        "date": "2023-04-04T14:00:00"
+      },
+      {
+        "id": 5,
+        "sender_id": 2,
+        "recipient_id": 3,
+        "content": "I love your latest fashion post!",
+        "date": "2023-04-05T16:20:00"
+      }
+    ],
+    "stories": [
+      { "id": 1, "userId": 2, "image": "https://png.pngtree.com/background/20230612/original/pngtree-wolf-animals-images-wallpaper-for-pc-384x480-picture-image_3180467.jpg" },
+      { "id": 2, "userId": 3, "image": "https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" }
+    ]
+  }
