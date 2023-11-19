@@ -9,8 +9,8 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const postsResponse = await fetch('http://20.81.181.186:5000/api/posts');
-        const usersResponse = await fetch('http://20.81.181.186:5000/api/users');
+        const postsResponse = await fetch('https://administrador.modatextil.store/api/posts');
+        const usersResponse = await fetch('https://administrador.modatextil.store/api/users');
 
         const postsData = await postsResponse.json();
         const usersData = await usersResponse.json();
