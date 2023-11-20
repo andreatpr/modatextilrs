@@ -5,7 +5,7 @@ import UserProfileContainer from '../data/controller/userct';
 import UserProfilePosts from '../data/controller/userposts';
 function Perfil() {
     const userId= "6548392fd55ad4b6e96ede8c";
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA0MTIxMDMsImV4cCI6MTcwMDQxNTcwM30.29r3_lcjfothwAqIXGHl_1OO0CvRfmzrZHW8XOgVlX4';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA0NDMxMjIsImV4cCI6MTcwMDQ0NjcyMn0.qLYzKyvWHiJW7TTm3VSoeW5YhlyvE902lUu5arm-LkM';
     const [userDetails, setUserDetails] = useState({
         id: "",
         username: "",
