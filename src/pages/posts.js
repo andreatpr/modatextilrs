@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 const Post = ({ post, user }) => {
 	const [comment, setComment] = useState('');
-	const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA0MTU5NzIsImV4cCI6MTcwMDQxOTU3Mn0.Ef9jLId1cmb-2tXdq19w3Ile4722obpRVw7x9_GifNM';
+	const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA0NDMxMjIsImV4cCI6MTcwMDQ0NjcyMn0.qLYzKyvWHiJW7TTm3VSoeW5YhlyvE902lUu5arm-LkM';
     console.log(user)
     if (!user || !user.profilePicture) {
         return null;
@@ -13,7 +13,7 @@ const Post = ({ post, user }) => {
 	};
 	
 	const handlePostComment = () => {
-		fetch(`http://20.81.181.186:5000/api/comments/${post._id}`, {
+		fetch(`https://administrador.modatextil.store/api/comments/${post._id}`, {
 		method: 'POST',
 		headers: {
 			'Authorization': `Bearer ${token}`,
