@@ -1,6 +1,6 @@
 const fetchUserPosts = async (userId, token) => {
     try {
-      const response = await fetch(`http://20.81.181.186:5000/api/posts/user/${userId}`, {
+      const response = await fetch(`https://administrador.modatextil.store/api/posts/user/${userId}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
