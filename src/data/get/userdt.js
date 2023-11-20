@@ -1,6 +1,6 @@
 const fetchUserData = async (userId) => {
     try {
-      const response = await fetch(`http://20.81.181.186:5000/api/users/${userId}`);
+      const response = await fetch(`https://administrador.modatextil.store/api/users/${userId}`);
       const data = await response.json();
       return data;
     } catch (error) {
