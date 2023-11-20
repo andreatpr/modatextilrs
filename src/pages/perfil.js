@@ -63,7 +63,7 @@ function Perfil() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://20.81.181.186:5000/api/storys/${userId}`, {
+        const response = await fetch(`https://administrador.modatextil.store/api/storys/${userId}`, {
           headers: {
             Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA0MTIxMDMsImV4cCI6MTcwMDQxNTcwM30.29r3_lcjfothwAqIXGHl_1OO0CvRfmzrZHW8XOgVlX4`,
           },
