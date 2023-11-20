@@ -153,7 +153,7 @@ function Navbar (){
               // Usar Promise.all para esperar que todas las solicitudes se completen
               const commentsPromises = postsData.map(async (post) => {
                 const postId = post._id;
-                const responseComments = await fetch(`http://20.81.181.186:5000/api/comments/${postId}`, {
+                const responseComments = await fetch(`https://administrador.modatextil.store/api/comments/${postId}`, {
                   method: 'GET',
                   headers: {
                     'Authorization': `Bearer ${token}`,
