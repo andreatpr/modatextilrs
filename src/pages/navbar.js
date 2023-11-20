@@ -4,7 +4,7 @@ import '../styles/navbar.css'
 
 function Navbar (){
   const userId= "6548392fd55ad4b6e96ede8c";
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA0MTU5NzIsImV4cCI6MTcwMDQxOTU3Mn0.Ef9jLId1cmb-2tXdq19w3Ile4722obpRVw7x9_GifNM';
+  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA0NDMxMjIsImV4cCI6MTcwMDQ0NjcyMn0.qLYzKyvWHiJW7TTm3VSoeW5YhlyvE902lUu5arm-LkM';
 
     const [modalState, setModalState] = useState({
         currentStep: 'createPost',
@@ -75,7 +75,7 @@ function Navbar (){
             'Content-Type': 'application/json',
           };
       
-          const response = await fetch(`http://20.81.181.186:5000/api/posts/${userId}`, {
+          const response = await fetch(`https://administrador.modatextil.store/api/posts/${userId}`, {
             method: 'POST',
             headers: headers,
             body: JSON.stringify(requestBody),
@@ -134,7 +134,7 @@ function Navbar (){
         const fetchCommentsByUserId = async () => {
           try {
             // Obtener los posts del usuario
-            const responsePosts = await fetch(`http://20.81.181.186:5000/api/posts/user/${userId}`, {
+            const responsePosts = await fetch(`https://administrador.modatextil.store/api/posts/user/${userId}`, {
               method: 'GET',
               headers: {
                 'Authorization': `Bearer ${token}`,
