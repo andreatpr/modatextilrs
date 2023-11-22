@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
-const Post = ({ post, user, openModal  }) => {
+const Post = ({ post, user, openModal, comments}) => {
 	const [comment, setComment] = useState('');
-	const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA2MTYyNzMsImV4cCI6MTcwMDYxOTg3M30.A4h0XWho_HIQyN2JFUNRMCI0_tc1tHiJAoiohrVk-w4';
+	const [postComments, setPostComments] = useState([]);
+	const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA2NzM2NTcsImV4cCI6MTcwMDY3NzI1N30.UF0eqvFaxWxR7L_aZqM0FCe4DNr8zmHAow6_7FaSIRE';
 	console.log(user)
     if (!user || !user.profilePicture) {
         return null;
@@ -26,6 +27,25 @@ const Post = ({ post, user, openModal  }) => {
 		})
 		setComment('');
 	};
+	const handleShowComment = (_id) => {
+		fetch(`https://administrador.modatextil.store/api/comments/${_id}`, {
+		  method: 'GET',
+		  headers: {
+			'Authorization': `Bearer ${token}`,
+			'Content-Type': 'application/json',
+		  },
+		})
+		.then(response => response.json())
+		.then(data => {
+			setPostComments(data);
+			console.log('aqui',data)
+			openModal();
+		})
+		.catch(error => {
+		  console.error('Error fetching comments:', error);
+		});
+	  };
+	  
 	
   return (
     <div className="card">
@@ -157,9 +177,9 @@ const Post = ({ post, user, openModal  }) => {
 							</p> 
 
 						</a> 
-						<a href="#"> 
-							<h4 className="comments">View all comments</h4> 
-						</a> 
+						<a onClick={() => handleShowComment(post._id)}>
+						<h4 className="comments">View all comments</h4>
+						</a>
 						<a href="#"> 
 							<h5 className="postTime">2 hours ago</h5> 
 						</a> 
@@ -182,10 +202,10 @@ const Post = ({ post, user, openModal  }) => {
   );
 };
 
-const PostsList = ({ posts, users }) => {
+const PostsList = ({ posts, users, comments }) => {
 	const [showModal, setShowModal] = useState(false);
 	const [selectedPost, setSelectedPost] = useState(null);
-	  
+	const [comment, setComments] = useState([]); 
 	const openModal = (post) => {
 	  setSelectedPost(post);
 	  setShowModal(true);
@@ -197,26 +217,45 @@ const PostsList = ({ posts, users }) => {
 	};
   
 	return (
-	  <div>
+		<div>
 		{posts.map((post) => {
 		  const user = users.find((u) => u._id === post.userId);
 		  return (
 			<div key={post.id}>
-			  <Post post={post} user={user} openModal={() => openModal(post)} />
+			  <Post post={post} user={user} openModal={() => openModal(post)} comment={comments} />
 			</div>
 		  );
 		})}
 		{showModal && selectedPost && (
-		  <Modal post={selectedPost} users={users.find(u => u._id === selectedPost.userId)} closeModal={closeModal} />
+		  <Modal post={selectedPost} users={users.find(u => u._id === selectedPost.userId)} closeModal={closeModal} comments={comments}/>
 		)}
 	  </div>
 	);
   };
 
-  const Modal = ({ post, users, closeModal }) => {
-	//fetch comments postId id=post
-	console.log(post);
-	console.log('hh',users);
+  const Modal = ({ post, users, closeModal, comments }) => {
+	const [localComments, setLocalComments] = useState([]); // Use a different name for local state
+	const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA2NzM2NTcsImV4cCI6MTcwMDY3NzI1N30.UF0eqvFaxWxR7L_aZqM0FCe4DNr8zmHAow6_7FaSIRE';
+	// Fetch comments when the Modal component mounts
+	useEffect(() => {
+	  fetch(`https://administrador.modatextil.store/api/comments/${post._id}`, {
+		method: 'GET',
+		headers: {
+		  'Authorization': `Bearer ${token} `, // Replace with your actual token
+		  'Content-Type': 'application/json',
+		},
+	  })
+		.then(response => response.json())
+		.then(data => {
+		  setLocalComments(data);
+		})
+		.catch(error => {
+		  console.error('Error fetching comments:', error);
+		});
+	}, [post._id]);
+  
+	console.log(localComments);
+	console.log('hh', users);
 	return (
 	  <div className="modal">
 		<div className="modal-content">
@@ -229,24 +268,24 @@ const PostsList = ({ posts, users }) => {
 				</div>
 			  </div>
 			  <h3>
-			  {users.username}
-			  <br />
-			  <span>{users.bio}</span>
-			</h3>
+				{users.username}
+				<br />
+				<span>{users.bio}</span>
+			  </h3>
 			</div>
 		  </div>
 		  <div className="modal-sub-content">
-		  <img src={post.image} alt={`post-${post.id}`} className="modal-image" />
-		  <div className="modal-comments">
-			<h6>{post.caption}</h6>
-			<div>comentario</div>
-			<div>comentario</div>
-			<div>comentario</div>
-			{/* Mostrar comentarios aquí */}
-			{/* Puedes mapear los comentarios del post y mostrarlos */}
-		  </div></div>
+			<img src={post.image} alt={`post-${post._id}`} className="modal-image" />
+			<div className="modal-comments">
+			  <h6>{post.caption}</h6>
+			  {localComments.map(comment => (
+				<div style={{ marginBottom: '40px' }} key={comment._id}>{comment.content}</div>
+			  ))}
+			</div>
+		  </div>
 		</div>
 	  </div>
 	);
   };
+  
 export default PostsList;
