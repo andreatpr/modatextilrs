@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-const Post = ({ post, user }) => {
+const Post = ({ post, user, openModal  }) => {
 	const [comment, setComment] = useState('');
-	const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA0NDMxMjIsImV4cCI6MTcwMDQ0NjcyMn0.qLYzKyvWHiJW7TTm3VSoeW5YhlyvE902lUu5arm-LkM';
-    console.log(user)
+	const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA2MTYyNzMsImV4cCI6MTcwMDYxOTg3M30.A4h0XWho_HIQyN2JFUNRMCI0_tc1tHiJAoiohrVk-w4';
+	console.log(user)
     if (!user || !user.profilePicture) {
         return null;
       }
@@ -24,8 +24,6 @@ const Post = ({ post, user }) => {
 			content: comment,
 		}),
 		})
-
-		// Limpia el campo de comentario después de publicar
 		setComment('');
 	};
 	
@@ -93,7 +91,9 @@ const Post = ({ post, user }) => {
 									height="24"
 									role="img"
 									viewBox="0 0 48 48"
-									width="24"> 
+									width="24"
+									onClick={openModal}
+									> 
 									
 									<path clip-rule="evenodd"
 										d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 
@@ -183,16 +183,70 @@ const Post = ({ post, user }) => {
 };
 
 const PostsList = ({ posts, users }) => {
-    console.log(posts)
-  return (
-    <div>
-      {posts.map((post) => {
-        const user = users.find((u) => u._id=== post.userId);
-        return <Post key={post.id} post={post} user={user} />;
-      })}
-    </div>
-  );
-};
+	const [showModal, setShowModal] = useState(false);
+	const [selectedPost, setSelectedPost] = useState(null);
+	  
+	const openModal = (post) => {
+	  setSelectedPost(post);
+	  setShowModal(true);
+	};
+  
+	const closeModal = () => {
+	  setSelectedPost(null);
+	  setShowModal(false);
+	};
+  
+	return (
+	  <div>
+		{posts.map((post) => {
+		  const user = users.find((u) => u._id === post.userId);
+		  return (
+			<div key={post.id}>
+			  <Post post={post} user={user} openModal={() => openModal(post)} />
+			</div>
+		  );
+		})}
+		{showModal && selectedPost && (
+		  <Modal post={selectedPost} users={users.find(u => u._id === selectedPost.userId)} closeModal={closeModal} />
+		)}
+	  </div>
+	);
+  };
 
-
+  const Modal = ({ post, users, closeModal }) => {
+	//fetch comments postId id=post
+	console.log(post);
+	console.log('hh',users);
+	return (
+	  <div className="modal">
+		<div className="modal-content">
+		  <span className="close" onClick={closeModal}>&times;</span>
+		  <div className="userDetails">
+			<div className="profilepic">
+			  <div className="profile_img">
+				<div className="image">
+				  <img src={users.profilePicture} alt={users.username} />
+				</div>
+			  </div>
+			  <h3>
+			  {users.username}
+			  <br />
+			  <span>{users.bio}</span>
+			</h3>
+			</div>
+		  </div>
+		  <div className="modal-sub-content">
+		  <img src={post.image} alt={`post-${post.id}`} className="modal-image" />
+		  <div className="modal-comments">
+			<h6>{post.caption}</h6>
+			<div>comentario</div>
+			<div>comentario</div>
+			<div>comentario</div>
+			{/* Mostrar comentarios aquí */}
+			{/* Puedes mapear los comentarios del post y mostrarlos */}
+		  </div></div>
+		</div>
+	  </div>
+	);
+  };
 export default PostsList;
