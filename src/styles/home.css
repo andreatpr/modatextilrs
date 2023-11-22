@@ -534,3 +534,6 @@ body.modal-open {
   height: 450px;
   width: 450px;
 }
+.modal-comments-div div{
+  margin-bottom: 40px;
+}
