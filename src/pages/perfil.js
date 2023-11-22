@@ -5,7 +5,7 @@ import UserProfileContainer from '../data/controller/userct';
 import UserProfilePosts from '../data/controller/userposts';
 function Perfil() {
     const userId= "6548392fd55ad4b6e96ede8c";
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA0NDMxMjIsImV4cCI6MTcwMDQ0NjcyMn0.qLYzKyvWHiJW7TTm3VSoeW5YhlyvE902lUu5arm-LkM';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA2NzM2NTcsImV4cCI6MTcwMDY3NzI1N30.UF0eqvFaxWxR7L_aZqM0FCe4DNr8zmHAow6_7FaSIRE';
     const [userDetails, setUserDetails] = useState({
         id: "",
         username: "",
@@ -65,7 +65,7 @@ function Perfil() {
       try {
         const response = await fetch(`https://administrador.modatextil.store/api/storys/${userId}`, {
           headers: {
-            Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA0NDMxMjIsImV4cCI6MTcwMDQ0NjcyMn0.qLYzKyvWHiJW7TTm3VSoeW5YhlyvE902lUu5arm-LkM`,
+            Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA2NzM2NTcsImV4cCI6MTcwMDY3NzI1N30.UF0eqvFaxWxR7L_aZqM0FCe4DNr8zmHAow6_7FaSIRE`,
           },
         });
 
