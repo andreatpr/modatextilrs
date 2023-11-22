@@ -485,3 +485,52 @@ body.modal-open {
     text-decoration: underline;
   }
   
+
+  /*modal*/
+  /* Add these styles to your CSS */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1; /* Set a higher z-index value than other elements on the page */
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background:  rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 2; /* Ensure the modal content appears above the overlay */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  z-index: 3; /* Ensure the close button appears above the modal content */
+}
+.modal-sub-content{
+  display: flex;
+}
+.modal-comments{
+  padding: 90px;
+  margin-top: -140px;
+}
+.modal-comments div{
+  margin-bottom: 5px;
+  margin-left: -25px;
+}
+.modal-sub-content img{
+  height: 450px;
+  width: 450px;
+}
