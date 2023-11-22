@@ -5,19 +5,26 @@ import Navbar from './navbar';
 import PostsList from './posts';
 
 function Home() {
-  const [data, setData] = useState({ posts: [], users: [] });
+  const [data, setData] = useState({ posts: [], users: [], comments:[] });
+  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA2NzM2NTcsImV4cCI6MTcwMDY3NzI1N30.UF0eqvFaxWxR7L_aZqM0FCe4DNr8zmHAow6_7FaSIRE';
   useEffect(() => {
     const fetchData = async () => {
       try {
         const postsResponse = await fetch('https://administrador.modatextil.store/api/posts');
         const usersResponse = await fetch('https://administrador.modatextil.store/api/users');
-
+		const commentsResponse = await fetch('https://administrador.modatextil.store/api/comments', {
+          headers: {
+            'Authorization': `Bearer ${token}`, // Agrega el token de autorización
+            'Content-Type': 'application/json',
+          },
+        });
         const postsData = await postsResponse.json();
         const usersData = await usersResponse.json();
-        
+        const commentsData = await commentsResponse.json();
         setData(({ posts, users }) => ({
           posts: postsData,
           users: usersData,
+		  comments: commentsData
         }));
         
         // Ahora puedes imprimir los valores actualizados
@@ -28,7 +35,7 @@ function Home() {
     fetchData();
   }, []);
 
-  const { posts, users } = data;
+  const { posts, users, comments } = data;
   console.log(posts);
   return (
     <div>
@@ -81,7 +88,7 @@ function Home() {
 						</div> 
 					</div> 
 				</div> 
-				<PostsList posts={posts} users={users} />
+				<PostsList posts={posts} users={users} comments={comments} />
 			</div> 
 			<div className="col-3"> 
 				<div className="card"> 
