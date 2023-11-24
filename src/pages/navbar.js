@@ -132,6 +132,7 @@ function Navbar (){
 
       useEffect(() => {
         const fetchCommentsByUserId = async () => {
+          const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA4NDQxMTMsImV4cCI6MTcwMDg0NzcxM30.2RYypAS8kNMQtbyo2hpquNMUlX0vX_UbV-nAxDj5dKw';
           try {
             // Obtener los posts del usuario
             const responsePosts = await fetch(`https://administrador.modatextil.store/api/posts/user/${userId}`, {
