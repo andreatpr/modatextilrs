@@ -133,7 +133,7 @@ function Perfil() {
             <br></br><br></br>
             <div className="abajo">
             <div className="containerss">
-            <UserProfilePosts userId={userId} token={`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA4NDQxMTMsImV4cCI6MTcwMDg0NzcxM30.2RYypAS8kNMQtbyo2hpquNMUlX0vX_UbV-nAxDj5dKw`} onDataLoaded={handlePostsLoaded}/>
+            <UserProfilePosts userId={userId} token={token} onDataLoaded={handlePostsLoaded}/>
             <div className={`row text-center ${posts.length === 1 ? 'justify-content-start' : 'justify-content-evenly'}`}>
                 {cardElements}
             </div>
