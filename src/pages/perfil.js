@@ -65,7 +65,7 @@ function Perfil() {
       try {
         const response = await fetch(`https://administrador.modatextil.store/api/storys/${userId}`, {
           headers: {
-            Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA2NzM2NTcsImV4cCI6MTcwMDY3NzI1N30.UF0eqvFaxWxR7L_aZqM0FCe4DNr8zmHAow6_7FaSIRE`,
+            Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA4NDQxMTMsImV4cCI6MTcwMDg0NzcxM30.2RYypAS8kNMQtbyo2hpquNMUlX0vX_UbV-nAxDj5dKw`,
           },
         });
 
