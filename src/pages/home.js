@@ -37,7 +37,7 @@ function Home() {
 
   const { posts, users, comments } = data;
   console.log(posts);
-	  console.log(users);
+	  console.log(data);
   return (
     <div>
     <Navbar/>
