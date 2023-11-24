@@ -235,7 +235,7 @@ const PostsList = ({ posts, users, comments }) => {
 
   const Modal = ({ post, users, closeModal, comments }) => {
 	const [localComments, setLocalComments] = useState([]); // Use a different name for local state
-	const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA2NzM2NTcsImV4cCI6MTcwMDY3NzI1N30.UF0eqvFaxWxR7L_aZqM0FCe4DNr8zmHAow6_7FaSIRE';
+	const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ4MzkyZmQ1NWFkNGI2ZTk2ZWRlOGMiLCJpYXQiOjE3MDA4NDQxMTMsImV4cCI6MTcwMDg0NzcxM30.2RYypAS8kNMQtbyo2hpquNMUlX0vX_UbV-nAxDj5dKw';
 	// Fetch comments when the Modal component mounts
 	useEffect(() => {
 	  fetch(`https://administrador.modatextil.store/api/comments/${post._id}`, {
